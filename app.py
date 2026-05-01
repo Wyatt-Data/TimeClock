@@ -542,3 +542,675 @@ html, body, [class*="css"] {
     border: 1px solid rgba(255,193,7,0.3);
     border-radius: 10px;
     padding: 10px 14px;
+    margin: 6px 0;
+    font-size: 0.7rem;
+    color: #FFC107;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Progress ───────────────────────────── */
+.stProgress > div > div > div > div {
+    background: linear-gradient(90deg, #00F2FF, #7000FF) !important;
+    box-shadow: 0 0 20px rgba(0,242,255,0.6);
+    border-radius: 10px !important;
+}
+.stProgress > div > div {
+    background: rgba(0,0,0,0.5) !important;
+    border: 1px solid rgba(0,242,255,0.15);
+    border-radius: 10px !important;
+    height: 12px !important;
+}
+
+/* Over-target animations */
+@keyframes high-voltage-sheen {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes neon-surge {
+    0%   { box-shadow: 0 0 10px #ff0000, inset 0 0 5px #7a0000; }
+    50%  { box-shadow: 0 0 50px #ff3333, inset 0 0 20px #ff0000; filter: brightness(1.3); }
+    100% { box-shadow: 0 0 10px #ff0000, inset 0 0 5px #7a0000; }
+}
+.progress-over .stProgress > div > div {
+    animation: neon-surge 2s ease-in-out infinite !important;
+    background: #150000 !important;
+    border: 1px solid #ff0000 !important;
+}
+.progress-over .stProgress > div > div > div > div {
+    background: linear-gradient(90deg, #7a0000 0%, #ff0000 45%, #ffcccc 50%, #ff0000 55%, #7a0000 100%) !important;
+    background-size: 400% 400% !important;
+    animation: high-voltage-sheen 2.5s linear infinite !important;
+    box-shadow: none !important;
+}
+
+/* ── Inputs ─────────────────────────────── */
+input[type="number"] {
+    background: rgba(0,242,255,0.04) !important;
+    border: 1px solid rgba(0,242,255,0.15) !important;
+    border-radius: 8px !important;
+    color: #c8e8ff !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.95rem !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+input[type="number"]:focus {
+    border-color: rgba(0,242,255,0.5) !important;
+    box-shadow: 0 0 12px rgba(0,242,255,0.2) !important;
+}
+.stTextInput input, .stNumberInput input {
+    background: rgba(0,242,255,0.04) !important;
+}
+label {
+    font-size: 0.62rem !important;
+    letter-spacing: 2px !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+}
+
+/* ── Expanders ───────────────────────────── */
+.streamlit-expanderHeader {
+    background: rgba(0,242,255,0.06) !important;
+    border: 1px solid rgba(255,193,7,0.15) !important;
+    border-radius: 10px !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 2px !important;
+    color: #FFC107 !important;
+    font-family: 'Orbitron', sans-serif !important;
+    transition: background 0.2s ease !important;
+}
+.streamlit-expanderHeader:hover {
+    background: rgba(0,242,255,0.1) !important;
+}
+.streamlit-expanderContent {
+    background: rgba(0,8,18,0.5) !important;
+    border: 1px solid rgba(255,193,7,0.1) !important;
+    border-top: none !important;
+    border-radius: 0 0 10px 10px !important;
+    padding: 0.75rem !important;
+}
+
+/* ── Buttons ─────────────────────────────── */
+.stButton > button {
+    background: transparent !important;
+    border: 1px solid rgba(220,53,69,0.5) !important;
+    color: #ff6b7a !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 0.65rem !important;
+    letter-spacing: 3px !important;
+    width: 100% !important;
+    border-radius: 10px !important;
+    padding: 0.6rem !important;
+    transition: all 0.25s ease !important;
+}
+.stButton > button:hover {
+    background: rgba(220,53,69,0.12) !important;
+    box-shadow: 0 0 25px rgba(220,53,69,0.3) !important;
+    border-color: rgba(220,53,69,0.8) !important;
+}
+
+/* Crew buttons */
+.crew-button-active > button {
+    background: rgba(0,242,255,0.15) !important;
+    border-color: #00F2FF !important;
+    color: #00F2FF !important;
+    box-shadow: 0 0 20px rgba(0,242,255,0.3) !important;
+}
+
+/* ── Radio ───────────────────────────────── */
+div[role="radiogroup"] {
+    gap: 8px !important;
+}
+div[role="radiogroup"] label {
+    background: rgba(0,242,255,0.05) !important;
+    border: 1px solid rgba(0,242,255,0.15) !important;
+    border-radius: 8px !important;
+    padding: 6px 16px !important;
+    color: #FFC107 !important;
+    font-size: 0.65rem !important;
+    letter-spacing: 2px !important;
+    transition: all 0.2s !important;
+    text-transform: uppercase !important;
+}
+div[role="radiogroup"] label:has(input:checked) {
+    background: rgba(255,193,7,0.15) !important;
+    border-color: #FFC107 !important;
+    box-shadow: 0 0 12px rgba(255,193,7,0.2) !important;
+}
+
+/* ── Checkbox ─────────────────────────────── */
+.stCheckbox label {
+    color: #a0b0c0 !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 1px !important;
+    text-transform: none !important;
+}
+
+/* ── Scrollbar ─────────────────────────────  */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #020408; }
+::-webkit-scrollbar-thumb { background: #1a2040; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #00F2FF; }
+
+/* ── Selectbox ─────────────────────────────  */
+.stSelectbox > div > div {
+    background: rgba(0,242,255,0.05) !important;
+    border: 1px solid rgba(0,242,255,0.15) !important;
+    border-radius: 8px !important;
+    color: #e0e0e0 !important;
+}
+</style>
+
+<!-- Nebula orbs -->
+<div class="nebula-orb"></div>
+<div class="nebula-orb2"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="moon"></div>
+
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+
+<div class="star-pulse" style="top:20%; left:30%;"></div>
+<div class="star-pulse" style="top:35%; left:60%;"></div>
+<div class="star-pulse" style="top:55%; left:40%;"></div>
+<div class="star-pulse" style="top:70%; left:75%;"></div>
+""", unsafe_allow_html=True)
+
+st.markdown('<div class="stars-upper-right"></div>', unsafe_allow_html=True)
+
+# ─────────────────────────────────────────────
+#  HEADER
+# ─────────────────────────────────────────────
+
+st.markdown('<h1 class="main-title">ENTROPY ZERO</h1>', unsafe_allow_html=True)
+st.markdown(
+    '<p class="sub-title">◈ TEMPORAL LOGISTICS SYSTEM v5.0 ◈ TARGET: 40.00H ◈</p>',
+    unsafe_allow_html=True,
+)
+st.markdown('<hr class="title-divider">', unsafe_allow_html=True)
+
+# ─────────────────────────────────────────────
+#  CREW SELECTOR  (centered above columns)
+# ─────────────────────────────────────────────
+
+st.markdown(
+    '<div style="text-align:center; font-size:0.6rem; color:#ffffff; letter-spacing:4px; '
+    'margin-bottom:0.5rem;">SELECT CREW SCHEDULE</div>',
+    unsafe_allow_html=True,
+)
+
+crew_cols = st.columns([2, 1, 1, 1, 2])
+with crew_cols[1]:
+    if st.button("🌟  MON – THU", key="btn_monthy"):
+        st.session_state["crew"] = "Mon–Thu"
+        st.rerun()
+with crew_cols[2]:
+    if st.button("🌏  MON – FRI", key="btn_monfri"):
+        st.session_state["crew"] = "Mon–Fri"
+        st.rerun()
+with crew_cols[3]:
+    if st.button("🌜  TUE – FRI", key="btn_tuefri"):
+        st.session_state["crew"] = "Tue–Fri"
+        st.rerun()
+
+crew = st.session_state["crew"]
+active_days = CREW_CONFIGS[crew]
+target_hours = 40.0
+work_days_count = len(active_days)
+target_per_day = target_hours / work_days_count
+
+# Show active crew badge
+crew_color = {"Mon–Thu": "#7000FF", "Mon–Fri": "#00F2FF", "Tue–Fri": "#FFC107"}[crew]
+st.markdown(
+    f'<div style="text-align:center; margin-bottom:1.2rem;">'
+    f'<span style="background:rgba({",".join(str(int(crew_color.lstrip("#")[i:i+2],16)) for i in (0,2,4))},0.15); '
+    f'border:1px solid {crew_color}; border-radius:20px; padding:4px 18px; '
+    f'font-size:0.65rem; letter-spacing:3px; color:{crew_color}; '
+    f'text-shadow:0 0 10px {crew_color};">'
+    f'◈ ACTIVE CREW: {crew} ◈ {work_days_count}×{target_per_day:.1f}H SCHEDULE</span></div>',
+    unsafe_allow_html=True,
+)
+
+st.markdown("<hr style='border-color:rgba(0,242,255,0.06); margin-bottom:1.2rem;'>",
+            unsafe_allow_html=True)
+
+# ─────────────────────────────────────────────
+#  TWO-COLUMN LAYOUT
+# ─────────────────────────────────────────────
+
+left_col, right_col = st.columns([1, 1], gap="large")
+
+
+# ══════════════════════════════════════════════
+#  LEFT — INPUT COMMAND CENTER
+# ══════════════════════════════════════════════
+
+with left_col:
+    st.markdown(
+        '<div class="ez-card-header" style="font-size:0.65rem; color:#00F2FF; '
+        'letter-spacing:3px; text-transform:uppercase; margin-bottom:1rem;">'
+        '⚙ INPUT COMMAND CENTER</div>',
+        unsafe_allow_html=True,
+    )
+
+    mode = st.radio(
+        "mode",
+        options=["Daily Logs", "Master Total"],
+        horizontal=True,
+        label_visibility="collapsed",
+    )
+
+    st.markdown(
+        "<hr style='border-color:rgba(0,242,255,0.08); margin:0.75rem 0;'>",
+        unsafe_allow_html=True,
+    )
+
+    all_errors: dict[str, list[str]] = {}
+
+    # ── DAILY LOGS ─────────────────────────────
+    if mode == "Daily Logs":
+        today_abbr = date.today().strftime("%a")
+
+        st.markdown(
+            f'<div style="font-size:0.58rem; color:#ffffff; letter-spacing:3px; '
+            f'text-align:center; margin-bottom:0.75rem;">'
+            f'ENTER TIMES IN MILITARY FORMAT  (e.g. 0830, 1700)</div>',
+            unsafe_allow_html=True,
+        )
+
+        day_hours: dict[str, float] = {}
+
+        for d in active_days:
+            is_today = d == today_abbr
+            icon = DAY_ICONS.get(d, "⬡")
+            label_str = DAY_LABELS.get(d, d)
+            expand_label = f"{icon}  {label_str}" + ("  ← TODAY" if is_today else "")
+
+            with st.expander(expand_label, expanded=is_today):
+                c1, c2 = st.columns(2)
+                with c1:
+                    # enforce sane default start time
+                    if st.session_state.get(f"{d}_s1", 0) == 0:
+                        st.session_state[f"{d}_s1"] = DEFAULT_START
+
+                    s1 = st.number_input(
+                        "Entry",
+                        value=int(st.session_state.get(f"{d}_s1", DEFAULT_START)),
+                        step=100, min_value=0, max_value=2359,
+                        key=f"{d}_s1",
+                    )
+                    s2 = st.number_input(
+                        "Break End",
+                        value=int(st.session_state.get(f"{d}_s2", 0)),
+                        step=100, min_value=0, max_value=2359,
+                        key=f"{d}_s2",
+                    )
+                with c2:
+                    e1 = st.number_input(
+                        "Break Start",
+                        value=int(st.session_state.get(f"{d}_e1", 0)),
+                        step=100, min_value=0, max_value=2359,
+                        key=f"{d}_e1",
+                    )
+                    default_exit = DEFAULT_E2.get(d, 1700)
+                    if d == active_days[-1]:
+                        default_exit = 0
+                    e2 = st.number_input(
+                        "Exit",
+                        value=int(st.session_state.get(f"{d}_e2", default_exit)),
+                        step=100, min_value=0, max_value=2359,
+                        key=f"{d}_e2",
+                    )
+
+                hrs, errs = calc_day_hours(s1, e1, s2, e2)
+                day_hours[d] = hrs
+
+                if errs:
+                    all_errors[d] = errs
+                    for e in errs:
+                        st.markdown(
+                            f'<div class="error-box">⚠ {e}</div>',
+                            unsafe_allow_html=True,
+                        )
+                elif hrs > 0:
+                    st.markdown(
+                        f'<div style="text-align:right; font-family:JetBrains Mono; '
+                        f'font-size:0.75rem; color:#00FF88; margin-top:4px; '
+                        f'text-shadow:0 0 8px rgba(0,255,136,0.4);">'
+                        f'✓  {hrs:.2f} H logged</div>',
+                        unsafe_allow_html=True,
+                    )
+
+        # Days not in active schedule get 0
+        for d in ALL_DAYS:
+            if d not in active_days:
+                day_hours[d] = 0.0
+
+        running_total = sum(day_hours[d] for d in active_days)
+
+        # Friday / last-day exit projection
+        last_day = active_days[-1]
+        earlier_days = active_days[:-1]
+        earlier_total = sum(day_hours[d] for d in earlier_days)
+        needed_last = target_hours - earlier_total
+
+        ls1 = st.session_state.get(f"{last_day}_s1", 0)
+        le1 = st.session_state.get(f"{last_day}_e1", 0)
+        ls2 = st.session_state.get(f"{last_day}_s2", 0)
+        fds1 = military_to_dec(ls1)
+        fde1 = military_to_dec(le1)
+        fds2 = military_to_dec(ls2)
+        gap = (fds2 - fde1) if (fds2 > fde1 and fde1 > 0) else 0
+        leave_time = format_mili_time(fds1 + needed_last + gap)
+
+        st.markdown("<br>", unsafe_allow_html=True)
+
+        if st.button("☢ SYSTEM WIPE — CLEAR ALL"):
+            st.session_state.clear()
+            st.session_state["crew"] = "Mon–Fri"
+            st.session_state["reset_trigger"] = 0
+            st.rerun()
+
+    # ── MASTER TOTAL ───────────────────────────
+    else:
+        st.markdown(
+            '<div style="font-size:0.58rem; color:#444; letter-spacing:3px; '
+            'text-align:center; margin-bottom:1rem;">QUICK CALCULATION MODE</div>',
+            unsafe_allow_html=True,
+        )
+
+        total_so_far = st.number_input(
+            "Prior Logged Hours",
+            value=float(st.session_state.get("total_so_far_qt", 30.0)),
+            min_value=0.0,
+            max_value=80.0,
+            step=0.25,
+            key="total_so_far_qt",
+            help="Total hours logged Mon–Thu (or Mon–Wed for 4-day crews)",
+        )
+
+        # Validate total
+        if total_so_far < 0:
+            st.markdown(
+                '<div class="error-box">⚠ Hours cannot be negative</div>',
+                unsafe_allow_html=True,
+            )
+        elif total_so_far > target_hours:
+            st.markdown(
+                '<div class="warning-box">⚡ Already at or over target hours</div>',
+                unsafe_allow_html=True,
+            )
+
+        fri_start = st.number_input(
+            "Last Day Start (Military Time)",
+            value=int(st.session_state.get("fri_start_qt", 700)),
+            min_value=0,
+            max_value=2359,
+            step=100,
+            key="fri_start_qt",
+            help="e.g. 0700 for 7:00 AM",
+        )
+
+        # Validate fri_start
+        fs_err = None
+        mins_check = fri_start % 100
+        if mins_check > 59:
+            fs_err = f"Invalid time: minutes '{mins_check}' must be 00–59"
+            st.markdown(f'<div class="error-box">⚠ {fs_err}</div>', unsafe_allow_html=True)
+
+        fri_lunch = st.checkbox(
+            "Deduct 0.5H Lunch Break",
+            value=st.session_state.get("fri_lunch_qt", False),
+            key="fri_lunch_qt",
+        )
+
+        running_total = max(0.0, total_so_far)
+        needed = max(0.0, target_hours - total_so_far)
+        start_dec = military_to_dec(fri_start) if not fs_err else 0.0
+        lunch = 0.5 if fri_lunch else 0
+        leave_time = format_mili_time(start_dec + needed + lunch) if not fs_err else "??:??"
+
+        day_hours = {d: 0.0 for d in ALL_DAYS}
+        if work_days_count >= 3:
+            per = total_so_far / max(work_days_count - 1, 1)
+            for d in active_days[:-1]:
+                day_hours[d] = per
+
+
+# ══════════════════════════════════════════════
+#  COMPUTED STATS
+# ══════════════════════════════════════════════
+
+hours_left = max(0, target_hours - running_total)
+pct = (running_total / target_hours) * 100
+pct_capped = min(pct, 100)
+is_overage = pct > 100
+
+today_wd = date.today().weekday()
+expected_by_now = PACE_EXPECTED.get(today_wd, 40)
+actual_diff = (expected_by_now - running_total) - 20
+if actual_diff > 0.05:
+    pace_str = f"{actual_diff:.1f}H BEHIND"
+    pace_class = "nerd-val-warn"
+elif actual_diff < -0.05:
+    pace_str = f"{abs(actual_diff):.1f}H EARLY"
+    pace_class = "nerd-val-green"
+else:
+    pace_str = "OPTIMAL"
+    pace_class = "nerd-val-cyan"
+
+
+# ══════════════════════════════════════════════
+#  RIGHT — ANALYTICS HUD
+# ══════════════════════════════════════════════
+
+with right_col:
+
+    # ── Banner ─────────────────────────────────
+    today_name = date.today().strftime("%A").upper()
+    last_day_of_week = active_days[-1]
+    is_last_day = date.today().strftime("%a") == last_day_of_week
+
+    if is_last_day:
+        st.markdown(
+            f'<div class="banner-active">'
+            f'🔥 &nbsp; {last_day_of_week.upper()} EXODUS: DEPART AT {leave_time}'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        days_remaining = sum(
+            1 for d in active_days
+            if ALL_DAYS.index(d) >= today_wd and not is_last_day
+        )
+        st.markdown(
+            f'<div class="status-box">'
+            f'🛡 &nbsp; SYSTEM ACTIVE &nbsp;/&nbsp; {today_name} &nbsp;/&nbsp; '
+            f'CREW: {crew}'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+    # ── Exit Vector Card ───────────────────────
+    st.markdown(
+        '<div class="ez-card">'
+        '<div class="ez-card-header">🚀 STRATEGIC EXIT VECTOR</div>'
+        '<div class="big-time-wrapper">'
+        f'<div class="big-time">{leave_time}</div>'
+        f'<div class="big-time-label">PROJECTED DEPARTURE // {last_day_of_week.upper()}</div>'
+        '</div>',
+        unsafe_allow_html=True,
+    )
+
+    # Progress bar
+    overage_class = "progress-over" if is_overage else ""
+    st.markdown(f'<div class="{overage_class}" style="margin:0.5rem 0;">', unsafe_allow_html=True)
+    pct_label = f"{pct:.1f}% {'⚡ OVERLOAD' if is_overage else 'complete'}"
+    st.progress(pct_capped / 100, text=pct_label)
+    st.markdown("</div>", unsafe_allow_html=True)
+
+    st.markdown(
+        '<div style="font-size:0.55rem; color:#ffffff; letter-spacing:2px; '
+        'text-align:center; margin-top:4px; margin-bottom:0.5rem;">'
+        'ⓘ &nbsp; PROJECTION BASED ON 15-MINUTE ROUNDING ENGINE'
+        '</div>'
+        '</div>',  # close ez-card
+        unsafe_allow_html=True,
+    )
+
+    # ── Stat Cards ─────────────────────────────
+    s1c, s2c, s3c = st.columns(3)
+
+    with s1c:
+        st.markdown(
+            f'<div class="stat-card">'
+            f'<div class="nerd-label">⚡ LOAD</div>'
+            f'<div class="nerd-val-cyan">{running_total:.2f} H</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+    with s2c:
+        st.markdown(
+            f'<div class="stat-card">'
+            f'<div class="nerd-label">🕐 REMAINING</div>'
+            f'<div class="nerd-val">{hours_left:.2f} H</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+    with s3c:
+        st.markdown(
+            f'<div class="stat-card">'
+            f'<div class="nerd-label">🎯 PACE</div>'
+            f'<div class="{pace_class}">{pace_str}</div>'
+            f'</div>',
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # ── Error Summary ──────────────────────────
+    if all_errors:
+        st.markdown(
+            '<div class="ez-card">'
+            '<div class="ez-card-header" style="color:#ff6b7a;">⚠ INPUT ERRORS DETECTED</div>',
+            unsafe_allow_html=True,
+        )
+        for day_name, errs in all_errors.items():
+            for e in errs:
+                st.markdown(
+                    f'<div class="error-box">[ {day_name.upper()} ] {e}</div>',
+                    unsafe_allow_html=True,
+                )
+        st.markdown('</div>', unsafe_allow_html=True)
+
+    # ── Load Distribution Chart Section (Unified) ────────────────
+    try:
+        import matplotlib
+        import matplotlib.pyplot as plt
+        import numpy as np
+        import io
+        import base64
+
+        # 1. Create the Figure
+        matplotlib.rcParams["font.family"] = "monospace"
+        fig, ax = plt.subplots(figsize=(7, 3.8))
+        fig.patch.set_alpha(0)
+        ax.set_facecolor((0, 0, 0, 0))
+
+        # Plotting Data
+        plot_days = active_days
+        vals = [day_hours.get(d, 0) for d in plot_days]
+        x = np.arange(len(plot_days))
+        bar_w = 0.55
+
+        # Logic for colors
+        per_day_target = target_per_day
+        bar_colors = []
+        for v in vals:
+            if v <= 0: bar_colors.append((0.15, 0.18, 0.22))
+            elif v < per_day_target * 0.9: bar_colors.append((0.25, 0.45, 0.70))
+            elif v <= per_day_target * 1.1: bar_colors.append((0.20, 0.75, 0.85))
+            else: bar_colors.append((0.90, 0.55, 0.20))
+
+        # Draw Bars
+        ax.bar(x, vals, width=bar_w + 0.15, color="#00F2FF", alpha=0.05) # Glow
+        bars = ax.bar(x, vals, width=bar_w, color=bar_colors,
+                  edgecolor=bar_colors, linewidth=1.2, alpha=0.9)
+
+        # Value labels - updated to pure white
+        for bar, v in zip(bars, vals):
+            if v > 0.1:
+                ax.text(
+                    bar.get_x() + bar.get_width() / 2,
+                    bar.get_height() + 0.08,
+                    f"{v:.1f}",
+                    ha="center", va="bottom",
+                    color="#FFFFFF",  # Pure White text
+                    fontsize=8,
+                    fontweight="bold" # Added a bit of weight for readability
+                )
+
+        # Target line - maybe make this white/grey to stay neutral
+        ax.axhline(y=per_day_target, linestyle="--", color="#FFFFFF", alpha=0.4, linewidth=1.0)
+       
+        # Axis labels - updated to white/cyan for high contrast
+        ax.set_xticklabels(
+            [DAY_LABELS.get(d, d) for d in plot_days],
+            color="#FFFFFF", fontsize=8
+        )
+
+        ax.axhline(y=per_day_target, linestyle="--", color="#FEFFC9", alpha=0.7, linewidth=1.2)
+        ax.set_xticks(x)
+        ax.set_xticklabels([DAY_LABELS.get(d, d) for d in plot_days], color="#00F2FF", fontsize=8)
+        ax.set_ylim(0, max(per_day_target * 1.3, max(vals) * 1.15 if vals else 12))
+       
+        for spine in ax.spines.values(): spine.set_visible(False)
+        ax.yaxis.grid(True, color="#0a1520", linewidth=0.8, alpha=0.8)
+        ax.set_axisbelow(True)
+        ax.tick_params(colors="#334455", length=0)
+       
+        plt.tight_layout(pad=0.4)
+
+        # 2. Convert Plot to Base64 String
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", transparent=True, bbox_inches='tight', dpi=150)
+        img_str = base64.b64encode(buf.getvalue()).decode()
+        plt.close(fig)
+
+        # 3. Render EVERYTHING inside the HTML Card
+        st.markdown(
+            f'''
+            <div class="ez-card">
+                <div class="ez-card-header">〜 LOAD DISTRIBUTION PROFILE</div>
+                <div style="display: flex; justify-content: center; padding: 10px 0;">
+                    <img src="data:image/png;base64,{img_str}" style="width: 100%; max-width: 650px;">
+                </div>
+            </div>
+            ''',
+            unsafe_allow_html=True
+        )
+
+    except Exception as chart_err:
+        st.markdown(
+            f'<div class="ez-card"><div class="warning-box">Chart Error: {chart_err}</div></div>',
+            unsafe_allow_html=True
+        )
+
+# ─────────────────────────────────────────────
+#  FOOTER
+# ─────────────────────────────────────────────
+
+st.markdown(
+    '<div style="text-align:center; margin-top:2rem; font-size:0.55rem; '
+    'color:#222; letter-spacing:4px; font-family:JetBrains Mono, monospace;">'
+    f'ENTROPY ZERO v5.0 &nbsp;◈&nbsp; {date.today().strftime("%Y.%m.%d")} &nbsp;◈&nbsp; '
+    f'CREW {crew} &nbsp;◈&nbsp; TARGET {target_hours:.0f}H'
+    '</div>',
+    unsafe_allow_html=True,
+)
