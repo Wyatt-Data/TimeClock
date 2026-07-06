@@ -1133,10 +1133,14 @@ with right_col:
         per_day_target = target_per_day
         bar_colors = []
         for v in vals:
-            if v <= 0: bar_colors.append((0.15, 0.18, 0.22))
-            elif v < per_day_target * 0.9: bar_colors.append((0.25, 0.45, 0.70))
-            elif v <= per_day_target * 1.1: bar_colors.append((0.20, 0.75, 0.85))
-            else: bar_colors.append((0.90, 0.55, 0.20))
+            if v <= 0:
+                bar_colors.append((0.15, 0.18, 0.22))
+            elif v < per_day_target * 0.9:
+                bar_colors.append((0.25, 0.45, 0.70))
+            elif v <= per_day_target * 1.1:
+                bar_colors.append((0.20, 0.75, 0.85))
+            else:
+                bar_colors.append((0.90, 0.55, 0.20))
 
         # Draw Bars
         ax.bar(x, vals, width=bar_w + 0.15, color="#00F2FF", alpha=0.05) # Glow
