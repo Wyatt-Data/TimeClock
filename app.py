@@ -1132,15 +1132,18 @@ with right_col:
         # Logic for colors
         per_day_target = target_per_day
         bar_colors = []
-        for v in vals:
-            if v <= 0:
-                bar_colors.append((0.15, 0.18, 0.22))
-            elif v < per_day_target * 0.9:
-                bar_colors.append((0.25, 0.45, 0.70))
-            elif v <= per_day_target * 1.1:
-                bar_colors.append((0.20, 0.75, 0.85))
+        for day, hours in zip(plot_days, vals):
+        # 8 hours for Mon-Fri schedule, 10 hours for 4-day schedules
+            daily_limit = 8 if crew == "Mon–Fri" else 10
+        
+            if hours <= 0:
+                color = (0.15, 0.18, 0.22)      # gray
+            elif hours > daily_limit:
+                color = (0.95, 0.20, 0.20)      # red (over target)
             else:
-                bar_colors.append((0.90, 0.55, 0.20))
+                color = (0.20, 0.75, 0.85)      # cyan (at or under target)
+        
+            bar_colors.append(color)
 
         # Draw Bars
         ax.bar(x, vals, width=bar_w + 0.15, color="#00F2FF", alpha=0.05) # Glow
