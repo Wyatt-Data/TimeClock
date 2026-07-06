@@ -1141,7 +1141,7 @@ with right_col:
             elif hours > daily_limit:
                 color = (0.95, 0.20, 0.20)      # red (over target)
             else:
-                color = (0.15, 0.18, 0.22)    # gray
+                color = (0.7, 0.1993, 155.22)   # gray
             bar_colors.append(color)
 
         # Draw Bars
