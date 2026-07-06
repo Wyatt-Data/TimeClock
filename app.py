@@ -1137,11 +1137,11 @@ with right_col:
             daily_limit = 8 if crew == "Mon–Fri" else 10
         
             if hours <= 0:
-                color = (0.15, 0.18, 0.22)      # gray
+                color = (0.20, 0.75, 0.85)       # cyan (at or under target)
             elif hours > daily_limit:
                 color = (0.95, 0.20, 0.20)      # red (over target)
             else:
-                color = (0.20, 0.75, 0.85)      # cyan (at or under target)
+                color = (0.15, 0.18, 0.22)    # gray
         
             bar_colors.append(color)
 
