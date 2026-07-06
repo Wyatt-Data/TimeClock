@@ -1142,7 +1142,6 @@ with right_col:
                 color = (0.95, 0.20, 0.20)      # red (over target)
             else:
                 color = (0.15, 0.18, 0.22)    # gray
-        `
             bar_colors.append(color)
 
         # Draw Bars
